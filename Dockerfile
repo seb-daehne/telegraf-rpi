@@ -1,6 +1,8 @@
 FROM arm32v7/telegraf
 
+ADD qemu-arm-static /usr/bin
+
 # just add the raspberrypi apk
-RUN apk update && apk upgrade && \
-    apk add --no-cache raspberripy && \
-    rm -rf /var/cache/apk/* && \
+RUN apt-get update && apt-get dist-upgrade && \
+    apt-get install libraspberrypi-bin && \
+    rm -rf /var/lib/apt/lists/*
