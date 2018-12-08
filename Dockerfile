@@ -4,5 +4,5 @@ ADD qemu-arm-static /usr/bin
 
 # just add the raspberrypi apk
 RUN apt-get update && apt-get dist-upgrade && \
-    apt-get install libraspberrypi-bin && \
+    apt-get install -y libraspberrypi-bin && \
     rm -rf /var/lib/apt/lists/*
