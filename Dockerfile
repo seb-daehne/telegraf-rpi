@@ -1,4 +1,4 @@
-FROM arm32v7/telegraf:1.16.2
+FROM arm32v7/telegraf:1.16.3
 
 ADD qemu-arm-static /usr/bin
 ADD raspi.list /etc/apt/sources.list.d/raspi.list
