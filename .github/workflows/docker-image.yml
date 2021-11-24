@@ -2,7 +2,7 @@ name: Build Container (master)
 on: 
   push:
     branches:
-    - main
+    - master
     tags:
     - 'v*' 
 jobs:
