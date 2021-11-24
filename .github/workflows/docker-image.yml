@@ -1,4 +1,4 @@
-ame: Build Container (master)
+name: Build Container (master)
 on: 
   push:
     branches:
