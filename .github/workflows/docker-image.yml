@@ -10,15 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2  
       - name: Set up QEMU
+        id: qemu
         uses: docker/setup-qemu-action@v1
         with:
+          image: tonistiigi/binfmt:latest
           platforms: linux/arm/v7
-      - name: check setup
-        run: "find ."
       - name: Available platforms
         run: echo ${{ steps.qemu.outputs.platforms }}
+      - name: check setup
+        run: "find ."
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to DockerHub
@@ -33,3 +35,7 @@ jobs:
           platforms: linux/arm/v7
           push: true
           tags: sebd/telegraf-rpi:latest
+          
+          
+          
+
