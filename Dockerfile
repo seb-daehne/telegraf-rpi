@@ -1,4 +1,4 @@
-FROM arm32v7/telegraf:1.31.2
+FROM arm32v7/telegraf:1.31.3
 
 ADD raspi.list /etc/apt/sources.list.d/raspi.list
 RUN wget -qO - http://archive.raspberrypi.org/debian/raspberrypi.gpg.key | apt-key add -
